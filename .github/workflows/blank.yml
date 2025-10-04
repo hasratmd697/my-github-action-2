@@ -1,0 +1,28 @@
+name: Email Step Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 24f1002299@ds.study.iitm.ac.in
+        run: echo "Hello, world! This step contains the email address."
+      
+      - name: Display date and time
+        run: date
+      
+      - name: Show environment
+        run: |
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Repository: ${{ github.repository }}"
